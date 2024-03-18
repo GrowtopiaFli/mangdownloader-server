@@ -12,7 +12,7 @@ const imageType = require("image-type");
 const evaluate = require("safe-evaluate-expression");
 const { Server } = require("socket.io");
 const isOnline = require("is-online");
-const isOnlineInterval = 5000;
+const isOnlineInterval = 10000;
 
 let mainUrl = "";
 
@@ -1192,7 +1192,7 @@ io.on("connection", (socket) => {
 	})*/
 });
 
-server.listen(0, host, () => {
+server.listen(42069, host, () => {
 	const port = server.address().port;
 	mainUrl = `http://${host}:${port}`;
 	console.log(mainUrl);
